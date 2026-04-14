@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel Physical — 2026 PE Chapter Survey Readiness</title>
+<meta name="description" content="Sentinel Physical helps TJC-accredited Critical Access Hospitals and Ambulatory Surgery Centers close the 2026 Physical Environment chapter gap before the surveyor arrives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   TOKENS — light mode, matches brief
+═══════════════════════════════════════ */
+:root {
+  --navy:      #0B1F3A;
+  --navy-mid:  #1A3A5C;
+  --gold:      #C9922A;
+  --gold-lt:   #E4B96A;
+  --ice:       #E8F0F7;
+  --ice-dk:    #D8E4F0;
+  --white:     #FFFFFF;
+  --body:      #2C3E50;
+  --muted:     #6B7C93;
+  --rule:      #D0D9E4;
+  --rule-gold: rgba(200,146,42,0.25);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Syne', sans-serif;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.7s;
+}
+
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--body);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow 0.3s;
+}
+
+nav.scrolled { box-shadow: 0 2px 20px rgba(11,31,58,0.08); }
+
+.nav-logo { display: flex; flex-direction: column; gap: 1px; }
+
+.nav-logo-main {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.nav-logo-sub {
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--navy); }
+
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+  padding: 9px 20px;
+  font-weight: 700 !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--navy) !important;
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════
+   HERO — navy block, like brief header
+═══════════════════════════════════════ */
+.hero {
+  position: relative;
+  background: var(--navy);
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 48px 80px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,146,42,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,146,42,0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 40% 60%, black 20%, transparent 100%);
+}
+
+.hero-code-bg {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 300;
+  color: rgba(200,146,42,0.07);
+  line-height: 0.85;
+  text-align: right;
+  pointer-events: none;
+  letter-spacing: -4px;
+  white-space: nowrap;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp var(--dur) var(--ease) 0.1s forwards;
+}
+
+.eyebrow-rule { width: 40px; height: 1px; background: var(--gold); }
+
+.eyebrow-text {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -1px;
+  color: #FAFAF8;
+  max-width: 860px;
+  opacity: 0;
+  animation: fadeUp var(--dur) var(--ease) 0.2s forwards;
+}
+
+.hero h1 em { font-style: italic; color: var(--gold-lt); }
+
+.hero-sub {
+  margin-top: 28px;
+  font-size: 17px;
+  color: rgba(232,240,247,0.65);
+  max-width: 520px;
+  line-height: 1.75;
+  opacity: 0;
+  animation: fadeUp var(--dur) var(--ease) 0.35s forwards;
+}
+
+.hero-actions {
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeUp var(--dur) var(--ease) 0.5s forwards;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--white);
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--gold-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(200,146,42,0.35);
+}
+
+.btn-primary svg { width: 14px; height: 14px; }
+
+.btn-secondary {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(232,240,247,0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.btn-secondary:hover { color: rgba(232,240,247,0.9); }
+
+.hero-stats {
+  position: absolute;
+  right: 48px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeLeft var(--dur) var(--ease) 0.6s forwards;
+}
+
+.stat-item {
+  text-align: right;
+  border-right: 2px solid var(--rule-gold);
+  padding-right: 20px;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--gold-lt);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(232,240,247,0.4);
+  margin-top: 3px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  animation: fadeUp 1s var(--ease) 1s forwards;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-text {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(232,240,247,0.35);
+}
+
+/* ═══════════════════════════════════════
+   URGENCY BAND
+═══════════════════════════════════════ */
+.urgency-band {
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+  padding: 14px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.urgency-band p {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(232,240,247,0.8);
+}
+
+.urgency-dot {
+  width: 5px; height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   SECTION BASE — white / ice alternating
+═══════════════════════════════════════ */
+section {
+  position: relative;
+  padding: 100px 48px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-eyebrow span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--rule);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+
+h2 em { font-style: italic; color: var(--gold); }
+
+/* ═══════════════════════════════════════
+   THE GAP SECTION
+═══════════════════════════════════════ */
+.gap-section {
+  background: var(--ice);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.gap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+.gap-left h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.gap-left p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.standard-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 5px 12px;
+  margin: 4px 4px 4px 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--navy);
+}
+
+.gap-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gap-item {
+  background: var(--white);
+  border-left: 3px solid transparent;
+  padding: 22px 24px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+
+.gap-item:hover {
+  border-left-color: var(--gold);
+  box-shadow: 2px 0 16px rgba(11,31,58,0.06);
+}
+
+.gap-item-num {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.gap-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.gap-item-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════ */
+.process-section { background: var(--white); }
+
+.process-intro { max-width: 640px; margin-bottom: 72px; }
+
+.process-intro p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.process-step {
+  background: var(--ice);
+  border-top: 3px solid transparent;
+  padding: 44px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.process-step:hover {
+  border-top-color: var(--gold);
+  background: var(--ice-dk);
+}
+
+.process-step::before {
+  content: attr(data-num);
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 110px;
+  font-weight: 300;
+  color: rgba(11,31,58,0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.step-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.step-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.step-items {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.step-item::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   THE OFFER
+═══════════════════════════════════════ */
+.offer-section {
+  background: var(--ice);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+.offer-left h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.offer-left p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.deliverable-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.deliverable-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.d-icon {
+  width: 32px; height: 32px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.d-icon svg {
+  width: 14px; height: 14px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.d-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+
+.d-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Offer Card — matches brief card style */
+.offer-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--navy);
+  padding: 40px 32px;
+  position: sticky;
+  top: 84px;
+  box-shadow: 0 4px 24px rgba(11,31,58,0.08);
+}
+
+.offer-card-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.offer-card-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+
+.offer-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.price-currency {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.price-num {
+  font-family: var(--font-body);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.price-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.offer-includes {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.inc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--body);
+}
+
+.inc-check {
+  width: 16px; height: 16px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inc-check svg {
+  width: 9px; height: 9px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.offer-btn {
+  width: 100%;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 17px 24px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.offer-btn:hover {
+  background: var(--navy);
+  transform: translateY(-1px);
+}
+
+.offer-btn svg { width: 14px; height: 14px; }
+
+.offer-footnote {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── HOMEPAGE OFFER FORM ─────────────── */
+.offer-form { display: flex; flex-direction: column; gap: 10px; }
+
+.of-row { display: flex; flex-direction: column; gap: 4px; }
+
+.of-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.of-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.of-input, .of-select {
+  width: 100%;
+  background: var(--ice);
+  border: 1px solid var(--rule);
+  padding: 10px 13px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--navy);
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.of-input:focus, .of-select:focus {
+  border-color: var(--navy);
+  background: var(--white);
+}
+
+.of-input::placeholder { color: var(--muted); opacity: 0.65; }
+
+.of-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7C93' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+.offer-mega-cta {
+  width: 100%;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 24px 20px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 4px;
+  line-height: 1.1;
+}
+
+.offer-mega-cta:hover {
+  background: var(--navy);
+  transform: translateY(-2px);
+}
+
+.offer-mega-cta svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+.of-note {
+  font-size: 10px; color: var(--muted);
+  text-align: center; line-height: 1.5;
+  padding-top: 6px;
+}
+
+/* ═══════════════════════════════════════
+   WHO WE SERVE
+═══════════════════════════════════════ */
+.serve-section { background: var(--white); }
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 60px;
+}
+
+.serve-card {
+  background: var(--ice);
+  border-top: 3px solid transparent;
+  padding: 36px 28px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.serve-card:hover {
+  border-top-color: var(--gold);
+  box-shadow: 0 4px 24px rgba(11,31,58,0.08);
+}
+
+.serve-icon { font-size: 24px; margin-bottom: 16px; }
+
+.serve-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.serve-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.serve-tag {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  padding: 4px 10px;
+}
+
+/* ═══════════════════════════════════════
+   FINAL CTA — navy block like brief hero
+═══════════════════════════════════════ */
+.cta-section {
+  background: var(--navy);
+  padding: 100px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: 'PE.04.01.01';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-family: var(--font-display);
+  font-size: 200px;
+  font-weight: 300;
+  color: rgba(200,146,42,0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -4px;
+}
+
+.cta-section h2 {
+  color: #FAFAF8;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.cta-section h2 em { color: var(--gold-lt); }
+
+.cta-section p {
+  font-size: 17px;
+  color: rgba(232,240,247,0.6);
+  max-width: 500px;
+  margin: 0 auto 44px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.btn-dark {
+  background: var(--gold);
+  color: var(--white);
+  padding: 18px 44px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.btn-dark:hover {
+  background: var(--gold-lt);
+  transform: translateY(-2px);
+}
+
+.btn-dark svg { width: 14px; height: 14px; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--white);
+  border-top: 2px solid var(--navy);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 6px; }
+
+.footer-logo-main {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.footer-logo-rule { width: 32px; height: 2px; background: var(--gold); }
+
+.footer-tagline { font-size: 13px; color: var(--muted); }
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+
+.footer-right p { font-size: 13px; color: var(--muted); }
+
+.footer-right a {
+  font-size: 13px;
+  color: var(--gold);
+  transition: color 0.2s;
+}
+
+.footer-right a:hover { color: var(--navy); }
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  nav { padding: 0 24px; }
+  .nav-links { gap: 20px; }
+  .hero { padding: 100px 24px 80px; }
+  .hero-stats { display: none; }
+  section { padding: 80px 24px; }
+  .gap-grid, .offer-grid { grid-template-columns: 1fr; gap: 48px; }
+  .process-steps, .serve-grid { grid-template-columns: 1fr; }
+  .offer-card { position: static; }
+  footer { grid-template-columns: 1fr; }
+  .footer-right { text-align: left; }
+  .cta-section { padding: 80px 24px; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 42px; }
+  h2 { font-size: 34px; }
+  .hero-code-bg { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-main">Sentinel Physical</div>
+    <div class="nav-logo-sub">Survey Readiness</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#gap">The 2026 Gap</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#offer">Gap Analysis</a></li>
+    <li><a href="#serve">Who We Serve</a></li>
+    <li><a href="#offer" class="nav-cta">Book Gap Analysis</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-code-bg">PE<br>04.01<br>.01</div>
+
+  <div class="hero-eyebrow">
+    <div class="eyebrow-rule"></div>
+    <div class="eyebrow-text">2026 TJC Physical Environment Transition</div>
+  </div>
+
+  <h1>Your next survey<br>is testing your <em>data,</em><br>not your hardware.</h1>
+
+  <p class="hero-sub">
+    The Joint Commission's 2026 PE chapter consolidation created a documentation gap that most TJC-accredited facilities haven't closed. Sentinel Physical exists to close it — before the surveyor arrives.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#offer" class="btn-primary">
+      Book Your PE Gap Analysis
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#process" class="btn-secondary">
+      See how it works
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">40</div>
+      <div class="stat-label">Standards Consolidated</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Jan 1</div>
+      <div class="stat-label">2026 Effective Date</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Medicare Billing if<br>Deemed Status Lost</div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <div class="scroll-text">Scroll</div>
+  </div>
+</section>
+
+<!-- URGENCY BAND -->
+<div class="urgency-band">
+  <div class="urgency-dot"></div>
+  <p>The SAFEST survey methodology is now active as of April 2026 — outcome-based assessment replaces checkbox compliance</p>
+  <div class="urgency-dot"></div>
+</div>
+
+<!-- THE GAP -->
+<section class="gap-section" id="gap">
+  <div class="section-eyebrow">
+    <span>The 2026 Problem</span>
+  </div>
+  <h2>Most facilities have<br>the work done.<br><em>The paperwork is a mess.</em></h2>
+
+  <div class="gap-grid">
+    <div class="gap-left reveal">
+      <h3>The EC/LS to PE Crosswalk Gap</h3>
+      <p>
+        On January 1, 2026, The Joint Commission consolidated the Environment of Care (EC) and Life Safety (LS) chapters into a single Physical Environment (PE) chapter. Nearly 40 standards were restructured.
+      </p>
+      <p>
+        Your facility's inspection records, maintenance logs, and Life Safety Logbook still reference the old chapter structure. Your surveyor is looking for PE.04.01.01 compliance. Those two things don't automatically connect.
+      </p>
+      <p>The standards driving your next survey:</p>
+      <div style="margin-top: 12px;">
+        <span class="standard-pill">PE.04.01.01</span>
+        <span class="standard-pill">LS.02.01.10</span>
+        <span class="standard-pill">NFPA 80</span>
+        <span class="standard-pill">NFPA 105</span>
+        <span class="standard-pill">SAFEST Framework</span>
+      </div>
+    </div>
+
+    <div class="gap-right reveal reveal-delay-1">
+      <div class="gap-item">
+        <div class="gap-item-num">Gap 01</div>
+        <div class="gap-item-title">Legacy Documentation References</div>
+        <div class="gap-item-body">Existing inspection reports cite EC and LS chapter standards. Surveyors reviewing against the 2026 PE chapter see a mapping gap — even when the physical work is complete.</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-item-num">Gap 02</div>
+        <div class="gap-item-title">Unmapped Damper Assets</div>
+        <div class="gap-item-body">Previous vendors often missed dampers in mechanical rooms, above-ceiling plenum spaces, and non-standard locations. PE.04.01.01 requires a complete, current asset inventory — not what the last contractor documented.</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-item-num">Gap 03</div>
+        <div class="gap-item-title">SAFEST Methodology Unpreparedness</div>
+        <div class="gap-item-body">The shift from checklist to outcome-based assessment means surveyors now walk through the building expecting a real-time, data-backed picture of your Physical Environment program — not a binder of past reports.</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-item-num">Gap 04</div>
+        <div class="gap-item-title">Deemed Status Exposure</div>
+        <div class="gap-item-body">A Life Safety finding that results in a Requirement for Improvement (RFI) triggers a follow-up process. A pattern of deficiencies puts Deemed Status at risk — which means Medicare and Medicaid billing stops.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="section-eyebrow">
+    <span>Our Process</span>
+  </div>
+  <div class="process-intro">
+    <h2>Three steps to<br><em>survey-ready</em> documentation.</h2>
+    <p>We operate as your compliance documentation layer — between your physical inspection records and the surveyor's expectations. You keep your existing vendors. We make the paperwork bulletproof.</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step reveal" data-num="01">
+      <span class="step-tag">Step 01 — Audit</span>
+      <div class="step-title">PE Gap Analysis & Documentation Audit</div>
+      <div class="step-body">We review your current Life Safety Logbook, damper inspection records, and maintenance documentation against the 2026 PE chapter framework. Every gap is mapped — Red, Yellow, or Green.</div>
+      <div class="step-items">
+        <div class="step-item">Current binder review against PE.04.01.01</div>
+        <div class="step-item">EC/LS to PE crosswalk gap identification</div>
+        <div class="step-item">Asset inventory completeness check</div>
+        <div class="step-item">Delivered as structured Gap Report — not raw notes</div>
+      </div>
+    </div>
+
+    <div class="process-step reveal reveal-delay-1" data-num="02">
+      <span class="step-tag">Step 02 — Map</span>
+      <div class="step-title">Compliance Map & Asset Verification</div>
+      <div class="step-body">We deploy a field partner to verify and complete your damper asset inventory, then map every inspection record to the correct PE chapter element. Missing records are identified and scheduled for remediation.</div>
+      <div class="step-items">
+        <div class="step-item">Complete damper asset inventory</div>
+        <div class="step-item">NFPA 80/105 inspection execution via certified field partner</div>
+        <div class="step-item">ICRA-compliant access — no clinical disruption</div>
+        <div class="step-item">Every asset mapped to PE.04.01.01 elements</div>
+      </div>
+    </div>
+
+    <div class="process-step reveal reveal-delay-2" data-num="03">
+      <span class="step-tag">Step 03 — Report</span>
+      <div class="step-title">Survey-Ready Life Safety Dashboard</div>
+      <div class="step-body">We deliver a structured compliance package — mapped to the 2026 PE chapter — that your Life Safety Officer can present to a TJC or DNV surveyor with confidence. No translation required.</div>
+      <div class="step-items">
+        <div class="step-item">PE.04.01.01 crosswalk documentation</div>
+        <div class="step-item">Timestamped photographic evidence by asset</div>
+        <div class="step-item">SAFEST-ready outcome narrative</div>
+        <div class="step-item">Remediation tracking for open items</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE OFFER -->
+<section class="offer-section" id="offer">
+  <div class="section-eyebrow">
+    <span>The Engagement</span>
+  </div>
+  <h2>Start with the<br><em>Gap Analysis.</em></h2>
+
+  <div class="offer-grid">
+    <div class="offer-left reveal">
+      <h3>A diagnostic before a commitment.</h3>
+      <p>
+        The 2026 PE Gap Analysis is a fixed-scope, remote documentation review. We assess your current Life Safety Logbook and inspection records against the new PE chapter framework and deliver a structured Red/Yellow/Green Gap Report within 5 business days.
+      </p>
+      <p>
+        The $1,950 fee is credited back in full toward any subsequent Compliance Map or system-wide engagement. You're not buying a service contract — you're buying a clear picture of your exposure before your next survey.
+      </p>
+
+      <div class="deliverable-list">
+        <div class="deliverable-item">
+          <div class="d-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          </div>
+          <div>
+            <div class="d-title">PE Chapter Crosswalk Map</div>
+            <div class="d-desc">Every current EC/LS standard reference in your documentation mapped to the corresponding 2026 PE element.</div>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="d-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <div class="d-title">Red / Yellow / Green Gap Report</div>
+            <div class="d-desc">Structured findings by PE element — what's compliant, what's at risk, and what needs action before the next survey window.</div>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="d-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+          </div>
+          <div>
+            <div class="d-title">Maintenance Management Program Review</div>
+            <div class="d-desc">Assessment of your MMP documentation against the 2026 ITM (Inspection, Testing, and Maintenance) requirements under PE.04.01.01.</div>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="d-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.64 1.18 2 2 0 012.62 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006 6l.91-.91a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.28v1.64z"/></svg>
+          </div>
+          <div>
+            <div class="d-title">30-Minute Debrief Call</div>
+            <div class="d-desc">Walkthrough of findings with your Life Safety Officer or Director of Facilities. You'll know exactly what needs to happen before the surveyor arrives.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-card reveal reveal-delay-1">
+      <div class="offer-card-tag">Confidential · No Obligation · 1 Business Day Response</div>
+      <div class="offer-card-name">Request Your 2026 PE Gap Assessment</div>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--rule);">Tell us about your facility. We'll reach out within one business day to discuss your situation — no commitment required.</p>
+
+      <form class="offer-form" onsubmit="handleOfferSubmit(event)">
+        <div class="of-row-2">
+          <div class="of-row">
+            <label class="of-label">First Name</label>
+            <input class="of-input" type="text" placeholder="Sarah" required>
+          </div>
+          <div class="of-row">
+            <label class="of-label">Last Name</label>
+            <input class="of-input" type="text" placeholder="Mitchell" required>
+          </div>
+        </div>
+        <div class="of-row">
+          <label class="of-label">Facility Name</label>
+          <input class="of-input" type="text" placeholder="Comanche County Medical Center" required>
+        </div>
+        <div class="of-row-2">
+          <div class="of-row">
+            <label class="of-label">State</label>
+            <select class="of-select" required>
+              <option value="" disabled selected>Select</option>
+              <option>CA</option><option>TX</option><option>FL</option><option>NY</option>
+              <option>IL</option><option>PA</option><option>OH</option><option>GA</option>
+              <option>NC</option><option>MI</option><option>Other</option>
+            </select>
+          </div>
+          <div class="of-row">
+            <label class="of-label">Accrediting Body</label>
+            <select class="of-select" required>
+              <option value="" disabled selected>Select</option>
+              <option>TJC</option>
+              <option>DNV GL</option>
+              <option>Other / Unsure</option>
+            </select>
+          </div>
+        </div>
+        <div class="of-row">
+          <label class="of-label">Work Email</label>
+          <input class="of-input" type="email" placeholder="smitchell@facility.org" required>
+        </div>
+
+        <button type="submit" class="offer-mega-cta">
+          Get Your Gap Assessment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="of-note">No commitment required. Your information is kept confidential.</div>
+      </form>
+
+      <div id="offer-success" style="display:none;padding:40px 0;text-align:center;">
+        <div style="font-size:32px;margin-bottom:14px;">✓</div>
+        <div style="font-family:var(--font-display);font-size:22px;color:var(--navy);margin-bottom:8px;">Request received.</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;">We'll review your facility details and reach out within one business day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="serve-section" id="serve">
+  <div class="section-eyebrow">
+    <span>Who We Serve</span>
+  </div>
+  <h2>Built for the<br><em>facilities teams</em><br>carrying the most weight.</h2>
+
+  <div class="serve-grid">
+    <div class="serve-card reveal">
+      <div class="serve-icon">🏥</div>
+      <div class="serve-title">Critical Access Hospitals</div>
+      <div class="serve-body">Same TJC compliance burden as a 500-bed urban system. Fraction of the internal infrastructure. CAHs are the facilities most likely to face a documentation gap — and least likely to have a dedicated Life Safety Officer on staff to catch it.</div>
+      <span class="serve-tag">Primary Focus</span>
+    </div>
+
+    <div class="serve-card reveal reveal-delay-1">
+      <div class="serve-icon">⚕️</div>
+      <div class="serve-title">Ambulatory Surgery Centers</div>
+      <div class="serve-body">Rigorous CMS inspection requirements to maintain licensure, smaller footprint than hospitals, faster survey cycles. ASCs face the same PE chapter transition with fewer resources to manage it internally.</div>
+      <span class="serve-tag">High Priority</span>
+    </div>
+
+    <div class="serve-card reveal reveal-delay-2">
+      <div class="serve-icon">🏗️</div>
+      <div class="serve-title">Health System Campuses</div>
+      <div class="serve-body">One successful PE Gap Analysis at a single facility becomes the case for a system-wide Compliance Map across every campus. We deliver the Executive Life Safety Portfolio — aggregate risk visibility across the entire system.</div>
+      <span class="serve-tag">System Contracts</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <h2>Your survey window<br><em>is already open.</em></h2>
+  <p>TJC conducts unannounced surveys. The 2026 PE chapter is active now. The gap between your documentation and the surveyor's expectations doesn't wait for a convenient time to show up.</p>
+  <a href="#offer" class="btn-dark">
+    Start with the Gap Analysis — $1,950
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo-main">Sentinel Physical</div>
+    <div class="footer-logo-rule"></div>
+    <div class="footer-tagline">Survey Readiness for TJC-Accredited Healthcare Facilities</div>
+    <div class="footer-tagline" style="margin-top:4px; font-size:10px;">sentinelphysical.com · © 2026</div>
+  </div>
+  <div class="footer-right">
+    <p>Physical Environment Compliance</p>
+    <p>PE.04.01.01 · LS.02.01.10 · NFPA 80 · NFPA 105</p>
+    <a href="mailto:hello@sentinelphysical.com">hello@sentinelphysical.com</a>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav background on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.background = window.scrollY > 40
+    ? 'rgba(255,255,255,0.98)'
+    : 'rgba(255,255,255,0.95)';
+});
+
+// Offer form submission
+function handleOfferSubmit(e) {
+  e.preventDefault();
+  document.querySelector('.offer-form').style.display = 'none';
+  document.getElementById('offer-success').style.display = 'block';
+}
+</script>
+</body>
+</html>

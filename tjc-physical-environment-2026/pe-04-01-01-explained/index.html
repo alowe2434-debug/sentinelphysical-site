@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PE.04.01.01 Explained: The 2026 TJC ITM Standard for Fire & Smoke Dampers | Sentinel Physical</title>
+<meta name="description" content="PE.04.01.01 is the 2026 TJC standard governing fire and smoke damper inspection, testing, and maintenance. Learn what it requires, how it differs from EC.02.05.07, and how to document compliance.">
+<link rel="canonical" href="https://sentinelphysical.com/tjc-physical-environment-2026/pe-04-01-01-explained/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--gold:#C9922A;--gold-lt:#E4B96A;--ice:#E8F0F7;--white:#FFFFFF;--body:#2C3E50;--muted:#6B7C93;--rule:#D0D9E4;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Syne',sans-serif;--ease:cubic-bezier(.16,1,.3,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--body);font-family:var(--font-body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);}
+.nav-logo{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-main{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--navy);}
+.nav-logo-sub{font-size:8px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{background:var(--gold)!important;color:var(--white)!important;padding:9px 18px;font-weight:700!important;transition:background .2s!important;}
+.nav-cta:hover{background:var(--navy)!important;}
+.article-hero{background:var(--navy);padding:110px 48px 64px;position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,146,42,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(200,146,42,.07) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 80% at 30% 50%,black,transparent);}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:11px;letter-spacing:1px;color:rgba(232,240,247,.4);position:relative;}
+.hero-breadcrumb a{color:var(--gold);transition:color .2s;}
+.hero-breadcrumb span{color:rgba(232,240,247,.3);}
+.article-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;position:relative;}
+.eyebrow-rule{width:36px;height:1px;background:var(--gold);}
+.eyebrow-text{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.article-hero h1{font-family:var(--font-display);font-size:clamp(34px,4.5vw,60px);font-weight:300;line-height:1.07;color:#FAFAF8;max-width:820px;letter-spacing:-.5px;position:relative;}
+.article-hero h1 em{font-style:italic;color:var(--gold-lt);}
+.hero-meta{margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;}
+.meta-pill{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(232,240,247,.5);}
+.meta-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.article-layout{display:grid;grid-template-columns:1fr 300px;gap:64px;max-width:1120px;margin:0 auto;padding:72px 48px;}
+.article-body{min-width:0;}
+.article-sidebar{position:relative;}
+.article-body h2{font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--navy);margin:48px 0 16px;line-height:1.15;letter-spacing:-.3px;}
+.article-body h2 em{font-style:italic;color:var(--gold);}
+.article-body h3{font-size:16px;font-weight:700;color:var(--navy);margin:24px 0 8px;}
+.article-body p{font-size:17px;color:var(--body);line-height:1.8;margin-bottom:18px;}
+.article-body strong{color:var(--navy);font-weight:600;}
+.lead-para{font-size:20px!important;font-family:var(--font-display);font-weight:400;color:var(--navy)!important;line-height:1.65!important;margin-bottom:28px!important;border-left:3px solid var(--gold);padding-left:20px;}
+.callout{background:var(--ice);border-left:4px solid var(--navy);padding:20px 22px;margin:28px 0;}
+.callout-label{font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.callout p{font-size:15px!important;color:var(--body)!important;margin-bottom:0!important;}
+.callout strong{color:var(--navy);}
+.callout-warn{background:#FEF9E7;border-left-color:var(--gold);}
+.req-grid{display:flex;flex-direction:column;gap:1px;margin:24px 0;}
+.req-item{display:grid;grid-template-columns:56px 1fr;border-bottom:1px solid var(--rule);}
+.req-item:first-child{border-top:1px solid var(--rule);}
+.req-code{background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;letter-spacing:1px;color:var(--gold);text-transform:uppercase;text-align:center;padding:4px;flex-shrink:0;line-height:1.2;}
+.req-content{padding:16px 18px;}
+.req-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.req-body{font-size:13px;color:var(--muted);line-height:1.6;}
+.req-status{display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.rs-high{color:#C0392B;}.rs-med{color:var(--gold);}.rs-lower{color:#1E8449;}
+.article-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+.article-table th{background:var(--navy);color:rgba(232,240,247,.8);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 14px;text-align:left;}
+.article-table td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.article-table tr:nth-child(even) td{background:var(--ice);}
+.article-table td:first-child{font-weight:600;color:var(--navy);}
+.article-body ul{margin:14px 0 18px;display:flex;flex-direction:column;gap:8px;}
+.article-body ul li{display:flex;align-items:flex-start;gap:10px;font-size:16px;color:var(--body);line-height:1.6;}
+.article-body ul li::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:24px 0;}
+.compare-col{padding:24px;}
+.compare-col.old{background:var(--ice);}
+.compare-col.new{background:var(--navy);}
+.compare-label{font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;}
+.compare-col.old .compare-label{color:var(--muted);}
+.compare-col.new .compare-label{color:var(--gold);}
+.compare-col.old p{font-size:13px;color:var(--body);line-height:1.6;}
+.compare-col.new p{font-size:13px;color:rgba(232,240,247,.75);line-height:1.6;}
+.article-divider{height:1px;background:var(--rule);margin:44px 0;}
+.faq-list{display:flex;flex-direction:column;gap:0;margin-top:20px;}
+.faq-item{border-bottom:1px solid var(--rule);}
+.faq-item:first-child{border-top:1px solid var(--rule);}
+.faq-q{width:100%;padding:17px 0;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;text-align:left;gap:16px;}
+.faq-q-text{font-size:14px;font-weight:600;color:var(--navy);line-height:1.4;}
+.faq-icon{width:20px;height:20px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s var(--ease),background .2s;}
+.faq-icon svg{width:10px;height:10px;stroke:var(--gold);fill:none;stroke-width:2;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);}
+.faq-item.open .faq-icon svg{stroke:var(--navy);}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .3s;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:16px;}
+.article-cta-block{background:var(--navy);padding:44px;margin:48px 0 0;position:relative;overflow:hidden;}
+.article-cta-block::before{content:'PE.04';position:absolute;right:-20px;bottom:-20px;font-family:var(--font-display);font-size:120px;font-weight:300;color:rgba(200,146,42,.07);line-height:1;pointer-events:none;}
+.acb-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.acb-title{font-family:var(--font-display);font-size:26px;font-weight:300;color:#FAFAF8;line-height:1.2;margin-bottom:10px;}
+.acb-body{font-size:14px;color:rgba(232,240,247,.6);line-height:1.7;margin-bottom:22px;max-width:500px;}
+.acb-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--white);padding:15px 26px;font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s;text-decoration:none;}
+.acb-btn:hover{background:var(--gold-lt);transform:translateY(-1px);}
+.acb-btn svg{width:13px;height:13px;}
+.sidebar-sticky{position:sticky;top:84px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--navy);}
+.sc-header{padding:18px 18px 0;}
+.sc-tag{font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.sc-title{font-family:var(--font-display);font-size:16px;font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:10px;}
+.sc-body{padding:0 18px 14px;font-size:12px;color:var(--muted);line-height:1.6;}
+.sidebar-form{display:flex;flex-direction:column;gap:7px;padding:0 18px 14px;}
+.sf-input,.sf-select{width:100%;background:var(--ice);border:1px solid var(--rule);padding:9px 11px;font-family:var(--font-body);font-size:12px;color:var(--navy);outline:none;border-radius:0;appearance:none;-webkit-appearance:none;transition:border-color .2s;}
+.sf-input:focus,.sf-select:focus{border-color:var(--navy);background:var(--white);}
+.sf-input::placeholder{color:var(--muted);opacity:.65;}
+.sf-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7C93' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;cursor:pointer;}
+.sf-row-2{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.sidebar-cta{width:100%;background:var(--gold);color:var(--white);border:none;padding:16px 14px;font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s;line-height:1.1;}
+.sidebar-cta:hover{background:var(--navy);transform:translateY(-1px);}
+.sidebar-cta svg{width:14px;height:14px;flex-shrink:0;}
+.sc-note{font-size:10px;color:var(--muted);text-align:center;padding:9px 18px;border-top:1px solid var(--rule);line-height:1.5;}
+.sidebar-links-card{background:var(--ice);padding:18px;}
+.slc-label{font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.slc-links{display:flex;flex-direction:column;gap:8px;}
+.slc-link{font-size:13px;color:var(--navy);display:flex;align-items:center;gap:7px;font-weight:500;transition:color .2s;}
+.slc-link:hover{color:var(--gold);}
+.slc-link::before{content:'→';color:var(--gold);font-size:11px;}
+footer{background:var(--white);border-top:2px solid var(--navy);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;}
+.footer-logo-main{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--navy);}
+.footer-rule{width:32px;height:2px;background:var(--gold);margin:6px 0;}
+.footer-tagline{font-size:11px;color:var(--muted);}
+.footer-right{text-align:right;font-size:11px;color:var(--muted);}
+.footer-right a{color:var(--gold);}
+@media(max-width:1024px){.article-layout{grid-template-columns:1fr;padding:48px 24px;}.article-sidebar{display:none;}.article-hero{padding:100px 24px 52px;}nav{padding:0 24px;}footer{padding:32px 24px;flex-direction:column;gap:16px;text-align:center;}.footer-right{text-align:center;}.compare-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-main">Sentinel Physical</div>
+    <div class="nav-logo-sub">Survey Readiness</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/tjc-physical-environment-2026/">2026 PE Guide</a></li>
+    <li><a href="/gap-analysis.html" class="nav-cta">Get Your Gap Assessment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="article-hero">
+  <div class="hero-breadcrumb">
+    <a href="/index.html">Home</a>
+    <span>/</span>
+    <a href="/tjc-physical-environment-2026/">TJC Physical Environment 2026</a>
+    <span>/</span>
+    <span>PE.04.01.01 Explained</span>
+  </div>
+  <div class="article-eyebrow">
+    <div class="eyebrow-rule"></div>
+    <div class="eyebrow-text">2026 TJC Standard · ITM Compliance</div>
+  </div>
+  <h1>PE.04.01.01 <em>Explained:</em><br>The 2026 ITM Standard for<br>Fire &amp; Smoke Dampers</h1>
+  <div class="hero-meta">
+    <div class="meta-pill"><div class="meta-dot"></div>Effective January 1, 2026</div>
+    <div class="meta-pill"><div class="meta-dot"></div>Replaces EC.02.05.07 &amp; LS.02.01.10</div>
+    <div class="meta-pill"><div class="meta-dot"></div>NFPA 80 · NFPA 105</div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="article-layout">
+  <article class="article-body">
+
+    <p class="lead-para">PE.04.01.01 is the 2026 TJC standard governing Inspection, Testing, and Maintenance (ITM) for fire and smoke dampers in accredited healthcare facilities. It replaced EC.02.05.07 and consolidated language from LS.02.01.10, becoming the single governing standard for fire and smoke damper documentation effective January 1, 2026.</p>
+
+    <p>If your Life Safety Logbook, vendor inspection reports, or Maintenance Management Program still reference EC.02.05.07, your documentation does not align with the current survey framework — even if the physical inspections were completed correctly.</p>
+
+    <h2>Why PE.04.01.01 Matters <em>Now</em></h2>
+
+    <p>The Joint Commission's 2026 Physical Environment chapter consolidation restructured nearly 40 standards. PE.04.01.01 sits at the center of this restructuring because fire and smoke damper compliance is one of the most frequently cited Physical Environment deficiencies in TJC surveys nationwide.</p>
+
+    <p>Under the old framework, damper-related findings were distributed across EC.02.05.07 (the ITM standard), LS.02.01.10 (fire features), and several related utility system standards. Under PE.04.01.01, all of this is consolidated into a single standard with clearer documentation requirements and a more direct path to a Requirement for Improvement (RFI) if documentation gaps exist.</p>
+
+    <div class="callout callout-warn">
+      <div class="callout-label">Survey Risk</div>
+      <p>A surveyor conducting a SAFEST walk in 2026 will review your Physical Environment documentation against PE.04.01.01 — not EC.02.05.07. Documentation that cannot be mapped to PE.04.01.01 elements creates an immediate finding, regardless of whether the underlying inspections were performed.</p>
+    </div>
+
+    <h2>What PE.04.01.01 <em>Actually Requires</em></h2>
+
+    <p>PE.04.01.01 has several distinct elements, each of which requires specific documentation to be survey-ready. Here is what each element covers and what constitutes a compliance gap.</p>
+
+    <div class="req-grid">
+      <div class="req-item">
+        <div class="req-code">PE.04<br>.01.01<br>(a)</div>
+        <div class="req-content">
+          <div class="req-title">Complete Asset Inventory</div>
+          <div class="req-body">Every fire and smoke damper in the facility must be inventoried and documented. This includes dampers in mechanical rooms, ceiling plenums, and non-standard locations that may have been missed by previous vendors.</div>
+          <div class="req-status rs-high">● High survey risk if incomplete</div>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-code">PE.04<br>.01.01<br>(b)</div>
+        <div class="req-content">
+          <div class="req-title">ITM per NFPA 80 / NFPA 105</div>
+          <div class="req-body">Inspections must follow NFPA 80 (fire dampers, typically every 4 years) and NFPA 105 (smoke dampers) intervals. Each inspection must produce timestamped open/closed actuation records for every damper.</div>
+          <div class="req-status rs-high">● High survey risk if overdue or undocumented</div>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-code">PE.04<br>.01.01<br>(c)</div>
+        <div class="req-content">
+          <div class="req-title">Contractor Credentials on File</div>
+          <div class="req-body">All technicians performing damper inspections must hold CFSDI-1 or equivalent certification. The certificate must be documented in the Life Safety Logbook — not just held by the contractor.</div>
+          <div class="req-status rs-med">● Medium risk — often overlooked</div>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-code">PE.04<br>.01.01<br>(d)</div>
+        <div class="req-content">
+          <div class="req-title">MMP Documentation</div>
+          <div class="req-body">The Maintenance Management Program must reference PE.04.01.01 — not legacy EC/LS chapter nomenclature. This is an administrative requirement but a common finding in 2026 surveys.</div>
+          <div class="req-status rs-med">● Medium risk — administrative gap</div>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-code">PE.04<br>.01.01<br>(e)</div>
+        <div class="req-content">
+          <div class="req-title">Deficiency Tracking & Remediation</div>
+          <div class="req-body">Any damper that fails actuation testing must be documented as a deficiency and tracked through remediation. Open deficiencies without a remediation timeline are a Red-level finding.</div>
+          <div class="req-status rs-high">● High survey risk if untracked</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>EC.02.05.07 vs. PE.04.01.01: <em>What Changed</em></h2>
+
+    <p>The shift from EC.02.05.07 to PE.04.01.01 is not purely cosmetic. The underlying NFPA 80 and NFPA 105 requirements did not change — but the documentation standard, the crosswalk between standards, and the surveyor's review framework all changed on January 1, 2026.</p>
+
+    <div class="compare-grid">
+      <div class="compare-col old">
+        <div class="compare-label">Pre-2026: EC.02.05.07 Framework</div>
+        <p>Damper ITM referenced across EC.02.05.07, LS.02.01.10, and related standards. Documentation organized by chapter. Survey findings distributed across EC and LS chapter citations. Checklist-based assessment approach.</p>
+      </div>
+      <div class="compare-col new">
+        <div class="compare-label">2026: PE.04.01.01 Framework</div>
+        <p>All damper ITM consolidated into PE.04.01.01. Single standard reference for all documentation. Survey findings cited under PE chapter. SAFEST outcome-based assessment — surveyors look for program evidence, not just inspection records.</p>
+      </div>
+    </div>
+
+    <p>The practical impact: a facility whose documentation was fully current under the 2025 framework has a documentation gap in 2026 — not because anything changed about their physical compliance program, but because the standard their documents reference no longer matches what surveyors are reviewing against.</p>
+
+    <h2>NFPA 80 Inspection Intervals Under PE.04.01.01</h2>
+
+    <p>PE.04.01.01 explicitly references NFPA 80 and NFPA 105 for inspection frequency requirements. The most common interval questions:</p>
+
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>Damper Type</th>
+          <th>Standard</th>
+          <th>Base Interval</th>
+          <th>Exception</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fire dampers (all)</td>
+          <td>NFPA 80</td>
+          <td>Every 4 years</td>
+          <td>1 year if fusible links in high-dust/grease environment</td>
+        </tr>
+        <tr>
+          <td>Smoke dampers</td>
+          <td>NFPA 105</td>
+          <td>Every 4 years</td>
+          <td>More frequent if smoke control system requires it</td>
+        </tr>
+        <tr>
+          <td>Combination fire/smoke</td>
+          <td>NFPA 80 + 105</td>
+          <td>Every 4 years</td>
+          <td>Must meet requirements of both standards</td>
+        </tr>
+        <tr>
+          <td>Post-repair reinspection</td>
+          <td>PE.04.01.01 (e)</td>
+          <td>Before return to service</td>
+          <td>No grace period — must be documented before closing deficiency</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>The 4-year interval gap</h3>
+    <p>Facilities that completed a full damper inspection in 2021 or 2022 are either approaching or already past their NFPA 80 reinspection date. Under PE.04.01.01, an overdue inspection is a deficiency whether or not the previous inspection found any issues. Do not assume a clean prior inspection carries forward indefinitely.</p>
+
+    <h2>How to Document PE.04.01.01 Compliance</h2>
+
+    <p>Survey readiness under PE.04.01.01 requires more than completed inspection reports. The documentation package a surveyor expects to see includes:</p>
+
+    <ul>
+      <li>A complete damper asset inventory with unique IDs for each damper</li>
+      <li>Inspection reports citing PE.04.01.01 (not EC.02.05.07) with per-damper actuation results</li>
+      <li>Timestamped photographic evidence for each damper inspected</li>
+      <li>CFSDI-1 or equivalent contractor certification on file</li>
+      <li>MMP documentation referencing the current PE chapter framework</li>
+      <li>Open deficiency log with remediation timeline for any failed dampers</li>
+      <li>SAFEST outcome narrative describing the overall ITM program status</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Key Point</div>
+      <p>The most common PE.04.01.01 documentation gap is not missing inspections — it is inspection records that reference the wrong standard. <strong>An inspection report citing EC.02.05.07 in 2026 is a documentation gap, even if the inspection was performed correctly and on schedule.</strong> The crosswalk between old and new standard language must be explicit in your Logbook.</p>
+    </div>
+
+    <div class="article-divider"></div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Is PE.04.01.01 the same as EC.02.05.07 with a new number?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a">Not exactly. The underlying NFPA 80 and NFPA 105 requirements are substantially the same. What changed is the documentation framework, the chapter structure, and the survey methodology. PE.04.01.01 also explicitly consolidates language that was previously split across EC.02.05.07, LS.02.01.10, and related standards — making the single-standard documentation requirement more comprehensive than the old EC framework.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Do we need to update every historical inspection report in our Logbook?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a">You do not need to retroactively restamp historical reports. What you need is a crosswalk document in your Logbook that explicitly maps your most recent inspection records to the corresponding PE.04.01.01 elements. A surveyor reviewing your program needs to be able to trace from the PE standard to the documentation that satisfies it — the crosswalk provides that bridge without requiring you to reissue old reports.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">What does "CFSDI-1 or equivalent" mean in practice?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a">CFSDI-1 is the ICB (International Certification Board) certification for fire and smoke damper inspectors. "Equivalent" typically covers NEMI-recognized certifications and TABB-credentialed technicians with documented damper inspection competency. The key requirement is that the certification is current, documented, and on file in your Logbook — not just held by the contractor. Ask your current inspection vendor for a copy of their technician's current certificate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">What is the fastest way to identify our PE.04.01.01 gaps?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a">Pull your most recent damper inspection report and your current Life Safety Logbook. Check whether the inspection report references PE.04.01.01 or the old EC/LS chapter standards. Check whether your asset inventory is complete. Check whether your MMP references the current PE framework. Those three checks will identify the most common gaps in under an hour. For a structured audit with a formal Red/Yellow/Green Gap Report, Sentinel Physical's remote Gap Analysis covers all PE.04.01.01 elements and is delivered within five business days.</div>
+      </div>
+    </div>
+
+    <!-- ARTICLE CTA -->
+    <div class="article-cta-block">
+      <div class="acb-label">Close Your PE.04.01.01 Gap</div>
+      <div class="acb-title">Know where your documentation stands before your next survey.</div>
+      <div class="acb-body">Sentinel Physical's remote Gap Analysis maps your current Life Safety Logbook to PE.04.01.01 and delivers a structured Red/Yellow/Green report within five business days. No site visit required.</div>
+      <a href="/gap-analysis.html" class="acb-btn">
+        Request Your Gap Assessment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+    <div class="sidebar-sticky">
+      <div class="sidebar-card">
+        <div class="sc-header">
+          <div class="sc-tag">Free Consultation</div>
+          <div class="sc-title">Does your Logbook reflect PE.04.01.01?</div>
+        </div>
+        <div class="sc-body">Tell us about your facility — we'll be in touch within one business day.</div>
+        <form class="sidebar-form" onsubmit="handleSidebarSubmit(event)">
+          <input class="sf-input" type="text" placeholder="Facility name" required>
+          <div class="sf-row-2">
+            <select class="sf-select" required>
+              <option value="" disabled selected>State</option>
+              <option>TX</option><option>CA</option><option>FL</option><option>Other</option>
+            </select>
+            <select class="sf-select" required>
+              <option value="" disabled selected>Body</option>
+              <option>TJC</option><option>DNV</option><option>Other</option>
+            </select>
+          </div>
+          <input class="sf-input" type="email" placeholder="Work email" required>
+          <button type="submit" class="sidebar-cta">
+            Get Your Gap Assessment
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <div id="sidebar-success" style="display:none;padding:18px;text-align:center;">
+          <div style="font-size:20px;margin-bottom:6px;">✓</div>
+          <div style="font-size:12px;font-weight:600;color:var(--navy);">Received. We'll be in touch within one business day.</div>
+        </div>
+        <div class="sc-note">No commitment required.</div>
+      </div>
+
+      <div class="sidebar-links-card">
+        <div class="slc-label">In This Series</div>
+        <div class="slc-links">
+          <a href="/tjc-physical-environment-2026/" class="slc-link">2026 PE Chapter Overview</a>
+          <a href="/tjc-physical-environment-2026/ec-to-pe-crosswalk/" class="slc-link">EC-to-PE Crosswalk</a>
+          <a href="/tjc-physical-environment-2026/safest-methodology-guide/" class="slc-link">SAFEST Methodology</a>
+          <a href="/tjc-physical-environment-2026/life-safety-logbook-requirements/" class="slc-link">Life Safety Logbook Guide</a>
+          <a href="/houston-medical-center-pe-compliance-guide/" class="slc-link">Houston TMC Compliance Guide</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo-main">Sentinel Physical</div>
+    <div class="footer-rule"></div>
+    <div class="footer-tagline">Survey Readiness · sentinelphysical.com · © 2026</div>
+  </div>
+  <div class="footer-right">
+    <div>PE.04.01.01 · LS.02.01.10 · NFPA 80 · NFPA 105</div>
+    <div style="margin-top:4px;"><a href="mailto:hello@sentinelphysical.com">hello@sentinelphysical.com</a></div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+function handleSidebarSubmit(e) {
+  e.preventDefault();
+  document.querySelector('.sidebar-form').style.display = 'none';
+  document.getElementById('sidebar-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
