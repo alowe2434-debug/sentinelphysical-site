@@ -496,20 +496,20 @@ footer{background:var(--white);border-top:2px solid var(--navy);padding:32px 48p
       <!-- Q7 -->
       <div class="question-card" id="q7">
         <div class="q-number">Question 7 of 10</div>
-        <div class="q-text">Is your team familiar with the SAFEST survey methodology?</div>
-        <div class="q-sub">SAFEST (Survey Activity Guide for the Environment of Safety and Technology) is the active TJC survey framework as of April 2026. It shifts from checklist-based to outcome-based assessment.</div>
+        <div class="q-text">Is your team familiar with the Accreditation 360 chapter restructuring that took effect January 1, 2026?</div>
+        <div class="q-sub">Accreditation 360 consolidates the Environment of Care (EC) and Life Safety (LS) chapters under the Physical Environment (PE) chapter. Surveyors now review against PE.04.01.01 elements and map legacy EC/LS findings back to the PE framework.</div>
         <div class="options-grid">
           <button class="option-btn" data-q="7" data-val="0" data-risk="none" data-flag="">
             <div class="opt-marker"><div class="opt-dot"></div></div>
-            <div><div class="opt-text">Yes — we've reviewed it and understand what surveyors now look for</div></div>
+            <div><div class="opt-text">Yes, we've reviewed the 360 restructuring and aligned our documentation approach to PE.04.01.01</div></div>
           </button>
-          <button class="option-btn" data-q="7" data-val="1" data-risk="low" data-flag="safest_gap">
+          <button class="option-btn" data-q="7" data-val="1" data-risk="low" data-flag="outcome_gap">
             <div class="opt-marker"><div class="opt-dot"></div></div>
-            <div><div class="opt-text">We've heard of it but haven't reviewed it in detail</div></div>
+            <div><div class="opt-text">We've heard of the chapter consolidation but haven't reviewed the changes in detail</div></div>
           </button>
-          <button class="option-btn" data-q="7" data-val="2" data-risk="med" data-flag="safest_gap">
+          <button class="option-btn" data-q="7" data-val="2" data-risk="med" data-flag="outcome_gap">
             <div class="opt-marker"><div class="opt-dot"></div></div>
-            <div><div class="opt-text">Not familiar with SAFEST</div><div class="opt-note">Your survey preparation approach may be misaligned</div></div>
+            <div><div class="opt-text">Not familiar with the Accreditation 360 restructuring</div><div class="opt-note">Your team may still be referencing legacy chapter standards</div></div>
           </button>
         </div>
         <div class="q-nav">
@@ -673,8 +673,11 @@ footer{background:var(--white);border-top:2px solid var(--navy);padding:32px 48p
     <div class="footer-tagline">Survey Readiness · sentinelphysical.com · © 2026</div>
   </div>
   <div class="footer-right">
-    <div>PE.04.01.01 · LS.02.01.10 · NFPA 80 · NFPA 105</div>
+    <div>PE.04.01.01 · NFPA 80 · NFPA 105 · Accreditation 360</div>
+    <div style="margin-top:8px;">555 West 5th Street, Los Angeles, CA 90013</div>
+    <div><a href="tel:+18002135169" style="color:inherit;text-decoration:none;">800.213.5169</a></div>
     <div style="margin-top:4px;"><a href="mailto:hello@sentinelphysical.com">hello@sentinelphysical.com</a></div>
+    <div style="margin-top:10px; font-size:11px; opacity:0.75; line-height:1.6;">E&amp;O insured through NEXT. CFSDI-1 contractor network via Safenetix (ANAB/ANSI accredited, ISO 17024).</div>
   </div>
 </footer>
 
@@ -710,10 +713,10 @@ const FINDINGS = {
     title: 'Maintenance Management Program Not Aligned',
     body: 'Your MMP must reference PE.04.01.01 rather than legacy EC/LS chapter standards. This is an administrative update, but it is one of the first documents a surveyor reviews during a Physical Environment walk in 2026.'
   },
-  safest_gap: {
+  outcome_gap: {
     status: 'yellow',
-    title: 'SAFEST Methodology Preparation Needed',
-    body: 'The SAFEST framework shifts TJC surveys from checklist-based to outcome-based assessment. Without understanding what surveyors are now looking for, your preparation efforts may be misaligned with how the survey will actually be conducted.'
+    title: 'PE Chapter Framework Preparation Needed',
+    body: 'The 2026 Accreditation 360 restructuring consolidated the Environment of Care and Life Safety chapters under Physical Environment (PE.04.01.01). Surveyors now review against the new chapter framework. Without understanding the restructuring, your team may reference outdated standards during a survey walkthrough, creating a documentation gap even when the physical work is complete.'
   },
   open_deficiency: {
     status: 'red',
